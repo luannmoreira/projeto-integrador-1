@@ -13,7 +13,6 @@
       <span class="span-100"></span>
     </div>
     <div class="container shape-container d-flex align-items-center">
-
       <div class="col px-0">
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-7 text-center pt-lg">
@@ -24,15 +23,18 @@
               class="img-fluid"
             />
             <p class="lead text-dark mt-4 mb-5" style="font-weight: bold">
-              Aprender de casa nunca foi tão fácil!
+              Fique um pouco mais esperto em 5 minutos!
             </p>
             <div class="mb-5 mt-5 animate__animated animate__backInUp ">
-              <base-button
-                class="btn-1 animate__animated start"
-                size="lg"
-                type="warning"
-                >Começar a responder!</base-button
-              >
+              <router-link :to="{ path: '/quiz' }">
+                <base-button
+                  class="btn-1 animate__animated start"
+                  size="lg"
+                  type="warning"
+                >
+                  Começar
+                </base-button>
+              </router-link>
             </div>
           </div>
         </div>
@@ -42,9 +44,7 @@
 </template>
 <script>
 export default {
-    data: () => ({
-
-    }),
+  data: () => ({}),
   components: {},
 };
 </script>
