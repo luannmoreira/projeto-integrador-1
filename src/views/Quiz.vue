@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <section class="section-profile-cover section-shaped my-0">
       <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
         <span></span>
@@ -23,7 +23,7 @@
           >
             <div class="box-question mt-2" style="text-align: center;">
               <h2>Questão {{ b }}/{{ questions.length }}</h2>
-              <p>{{ question.question }}</p>
+              <p class="mb-2">{{ question.question }}</p>
             </div>
             <div class="box-propositions">
               <ul>
@@ -31,7 +31,7 @@
                   v-for="(proposition, index) in question.propositions"
                   :key="index"
                   class="row"
-                  style="list-style: none;"
+                  style="list-style: none; "
                   @click="selectResponse(proposition, index)"
                   :class="correct ? check(proposition) : ''"
                 >
@@ -59,7 +59,8 @@
                 😕 Sempre há um começo, tente mais que você consegue!
               </h3>
               <h3 v-if="score == 2">
-                😉 Você está bom, continue para mostrar-se melhor a cada passo!
+                😉 Você está indo bem, continue para mostrar-se melhor a cada
+                passo!
               </h3>
 
               <h3 v-if="score == 3">
@@ -122,58 +123,56 @@ export default {
     return {
       questions: [
         {
-          question: "Inside which HTML element do we put the JavaScript ?",
+          question: "Qual é o nome das junções do corpo humano que permitem a mobilidade dos ossos?",
           propositions: [
-            { props: "<script>", correct: true },
-            { props: "<js>" },
-            { props: "<scripting>" },
-            { props: "<javascript>" },
+            { props: "Articulações", correct: true },
+            { props: "Artérias" },
+            { props: "Esqueleto" },
+            { props: "Cotovelo e Joelhos" },
           ],
         },
         {
           question:
-            "What is the correct syntax for referring to an external script called 'xxx.js' ?",
+            "Quantos biomas tem no Brasil?",
           propositions: [
-            { props: '<script href="xxx.js">' },
-            { props: '<script name="xxx.js">' },
-            { props: '<script src="xxx.js">', correct: true },
-            { props: '<script id="xxx.js">' },
+            { props: '6', correct: true },
+            { props: '4' },
+            { props: '5' },
+            { props: '2' },
           ],
         },
         {
-          question: "How do you write 'Hello World' in an alert box ?",
+          question: "A Hidra vive na água:",
           propositions: [
-            { props: 'msg("Hello World")' },
-            { props: 'alertBox("Hello World")' },
-            { props: 'alert("Hello World")', correct: true },
-            { props: 'msgBox("Hello World")' },
+            { props: 'Doce', correct: true },
+            { props: 'Salgada' },
           ],
         },
         {
-          question: "How to write an IF statement in JavaScript ?",
+          question: "Quando aconteceu a Revolução Russa?",
           propositions: [
-            { props: "if i = 5 then" },
-            { props: "if (i == 5)", correct: true },
-            { props: "if i == 5 then" },
-            { props: "if i = 5" },
+            { props: "1935" },
+            { props: "1917", correct: true },
+            { props: "1927" },
+            { props: "1953" },
           ],
         },
         {
-          question: "How does a FOR loop start ?",
+          question: "Qual um nome de sólido que tem 11 lados",
           propositions: [
-            { props: "for i = 1 to 5" },
-            { props: "for (i <= 5; i++)" },
-            { props: "for (i = 0; i <= 5)" },
-            { props: "for (i = 0; i <= 5; i++)", correct: true },
+            { props: "Pentágono" },
+            { props: "Undecágono", correct: true  },
+            { props: "Eneágono"},
+            { props: "Dodecágono"},
           ],
         },
         {
-          question: "How can you add a comment in a JavaScript ?",
+          question: "Qual o resultado dessa equação = 1789+1679/4 ?",
           propositions: [
-            { props: "'This is a comment" },
-            { props: "//This is a comment", correct: true },
-            { props: "<!--This is a comment-->" },
-            { props: "*This is a comment" },
+            { props: "2207.50" },
+            { props: "2208.75", correct: true },
+            { props: "2107" },
+            { props: "1938.25" },
           ],
         },
       ],
@@ -243,6 +242,10 @@ export default {
 </script>
 
 <style scoped>
+.body {
+  width: 100vw;
+  height: 100vh;
+}
 * {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -308,7 +311,7 @@ export default {
 
 ul {
   display: flex;
-  width: 90%;
+  width: 92%;
   margin: 0;
   padding: 0;
   flex-flow: column;
@@ -319,7 +322,7 @@ li {
   line-height: 3;
   border: 1.5px solid #cdd2d2;
   margin-bottom: 0.3rem;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -413,17 +416,28 @@ i {
   background-color: rgb(106, 128, 202);
 }
 
-#floating { 
-    animation-name: floating;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
- 
-@keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
+#floating {
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .mt--300 {
+   margin-top: -10rem
+  }
+}
 </style>

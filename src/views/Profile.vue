@@ -1,4 +1,5 @@
 <template>
+<div class="body">
   <div class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
       <div class="shape shape-style-1 shape-primary shape-skew alpha-4">
@@ -121,11 +122,13 @@
       </div>
     </section>
   </div>
+  </div>
 </template>
 <script>
 export default {};
 </script>
-<style scoped> 
+<style scoped>
+
 #floating { 
     animation-name: floating;
     animation-duration: 2s;

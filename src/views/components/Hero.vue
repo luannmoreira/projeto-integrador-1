@@ -45,7 +45,8 @@
 <script>
 export default {
   data: () => ({}),
-  components: {},
+  components: {
+  },
 };
 </script>
 <style scoped>
