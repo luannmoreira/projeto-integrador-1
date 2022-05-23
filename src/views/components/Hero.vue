@@ -23,9 +23,9 @@
               class="img-fluid"
             />
             <p class="lead text-dark mt-4 mb-5" style="font-weight: bold">
-              Fique um pouco mais esperto em 5 minutos!
+              Fique um pouco mais esperto com um quiz de 5 minutos!
             </p>
-            <div class="mb-5 mt-5 animate__animated animate__backInUp ">
+            <div class="mb-5 mt-5 animate__animated animate__backInUp">
               <router-link :to="{ path: '/quiz' }">
                 <base-button
                   class="btn-1 animate__animated start"

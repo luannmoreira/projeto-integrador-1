@@ -12,7 +12,7 @@
       </div>
     </section>
     <section class="section section-skew">
-      <div class="container">
+      <div class="container animate__animated animate__fadeInUp">
         <card shadow class="mt--300" no-body>
           <div class="" :style="{ width: progress + '%' }"></div>
           <div
@@ -242,21 +242,10 @@ export default {
 </script>
 
 <style scoped>
-.body {
-  width: 100vw;
-  height: 100vh;
-}
 * {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   letter-spacing: 2px;
-}
-
-.container-app {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
 }
 
 .container-quiz {
@@ -349,7 +338,7 @@ li > div {
 .footer-quiz {
   display: flex;
   width: 100%;
-  height: 10%;
+  height: 5%;
   justify-content: center;
   border-top: 1px solid #e7eae0;
   background-color: #e7eae0;
@@ -435,9 +424,4 @@ i {
   }
 }
 
-@media only screen and (max-width: 992px) {
-  .mt--300 {
-   margin-top: -10rem
-  }
-}
 </style>
