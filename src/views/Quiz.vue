@@ -204,7 +204,7 @@ export default {
       score: 0,
       correct: false,
       progress: 0,
-      url: "https://easysmart.com",
+      url: "https://easysmartpi.netlify.app/#/",
       title:
         "Eu consegui fazer",
       quote: "",
