@@ -29,5 +29,9 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.6"
+  },
+  "engines" : { 
+    "node" : "=10.24.0"
   }
 }
+
