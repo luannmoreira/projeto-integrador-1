@@ -83,6 +83,21 @@
               <base-button @click="restartQuiz">
                 Restart
               </base-button>
+              <base-button>
+                <social-sharing
+                  :url="url"
+                  :title='tweetScore'
+                  :hashtags="hashtags"
+                  :twitter-user="twitterUser"
+                  inline-template
+                >
+                  <div>
+                    <network network="twitter">
+                      <i class="fa fa-twitter"></i> Compartilhe no Twitter
+                    </network>
+                  </div>
+                </social-sharing>
+              </base-button>
             </div>
           </div>
           <div class="footer-quiz">
@@ -118,12 +133,18 @@
 </template>
 <script>
 import BaseButton from "../components/BaseButton.vue";
+import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
+
 export default {
+  components: {
+    VueGoodshareFacebook,
+  },
   data() {
     return {
       questions: [
         {
-          question: "Qual é o nome das junções do corpo humano que permitem a mobilidade dos ossos?",
+          question:
+            "Qual é o nome das junções do corpo humano que permitem a mobilidade dos ossos?",
           propositions: [
             { props: "Articulações", correct: true },
             { props: "Artérias" },
@@ -132,20 +153,19 @@ export default {
           ],
         },
         {
-          question:
-            "Quantos biomas tem no Brasil?",
+          question: "Quantos biomas tem no Brasil?",
           propositions: [
-            { props: '6', correct: true },
-            { props: '4' },
-            { props: '5' },
-            { props: '2' },
+            { props: "6", correct: true },
+            { props: "4" },
+            { props: "5" },
+            { props: "2" },
           ],
         },
         {
           question: "A Hidra vive na água:",
           propositions: [
-            { props: 'Doce', correct: true },
-            { props: 'Salgada' },
+            { props: "Doce", correct: true },
+            { props: "Salgada" },
           ],
         },
         {
@@ -161,9 +181,9 @@ export default {
           question: "Qual um nome de sólido que tem 11 lados",
           propositions: [
             { props: "Pentágono" },
-            { props: "Undecágono", correct: true  },
-            { props: "Eneágono"},
-            { props: "Dodecágono"},
+            { props: "Undecágono", correct: true },
+            { props: "Eneágono" },
+            { props: "Dodecágono" },
           ],
         },
         {
@@ -184,12 +204,22 @@ export default {
       score: 0,
       correct: false,
       progress: 0,
+      url: "https://easysmart.com",
+      title:
+        "Eu consegui fazer",
+      quote: "",
+      hashtags: "projetointegrador,inteligente,easysmart",
+      twitterUser: "luanncurioso",
     };
   },
   components: {
     BaseButton,
   },
-  computed: {},
+  computed: {
+    tweetScore() {
+      return "Eu consegui fazer " + this.score + "/" + this.questions.length + " no EasySmart, tente você também!"; 
+    }
+  },
   methods: {
     selectResponse(e) {
       this.correct = true;
@@ -423,5 +453,4 @@ i {
     transform: translate(0, -0px);
   }
 }
-
 </style>

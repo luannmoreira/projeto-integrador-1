@@ -98,8 +98,8 @@
                 </div>
                 <div class="text-center mt-5">
                   <h3>
-                    Alváro Nascimento,
-                    <span class="font-weight-light">20</span>
+                    Álvaro Nascimento,
+                    <span class="font-weight-light">21</span>
                   </h3>
                   <div class="h6 font-weight-300">
                     <i class="ni location_pin mr-2"></i>Cuiabá, Mato Grosso,
