@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer has-cards" style="height: 100vw">
+  <footer class="footer has-cards" style="height: 50vw">
     <div class="container">
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">

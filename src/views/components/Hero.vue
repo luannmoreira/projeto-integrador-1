@@ -30,7 +30,8 @@
                 <base-button
                   class="btn-1 animate__animated start"
                   size="lg"
-                  type="warning"
+                  type="success"
+                  outline
                 >
                   Começar
                 </base-button>

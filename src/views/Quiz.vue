@@ -31,7 +31,7 @@
                   v-for="(proposition, index) in question.propositions"
                   :key="index"
                   class="row"
-                  style="list-style: none; "
+                  style="list-style: none; padding-left: 2rem "
                   @click="selectResponse(proposition, index)"
                   :class="correct ? check(proposition) : ''"
                 >
@@ -76,7 +76,9 @@
               </h3>
 
               <h2 v-if="score == 6" class="pb-3" id="floating">
-                🤩 Pontuação Máxima! Parabéns!
+                🤩 Pontuação Máxima, Parabéns!
+              <br/>
+                Compartilhe com seus amigos!
               </h2>
             </div>
             <div class="mt-4 pt-4 mb-4">
@@ -100,7 +102,7 @@
               </base-button>
             </div>
           </div>
-          <div class="footer-quiz">
+          <div class="footer-quiz" style="padding: 1rem">
             <div v-if="progress < 100">
               <base-button
                 type="secondary"
@@ -133,11 +135,9 @@
 </template>
 <script>
 import BaseButton from "../components/BaseButton.vue";
-import VueGoodshareFacebook from "vue-goodshare/src/providers/Facebook.vue";
 
 export default {
   components: {
-    VueGoodshareFacebook,
   },
   data() {
     return {
@@ -213,7 +213,7 @@ export default {
     };
   },
   components: {
-    BaseButton,
+    BaseButton
   },
   computed: {
     tweetScore() {
@@ -278,34 +278,10 @@ export default {
   letter-spacing: 2px;
 }
 
-.container-quiz {
-  display: flex;
-  width: 40%;
-  height: 85%;
-  background-color: white;
-  text-align: center;
-  flex-flow: column;
-  border: 1px solid #e7eae0;
-  border-radius: 10px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.card {
+  transform: translateY(-8rem);
 }
-
-.header-quiz {
-  display: flex;
-  width: 100%;
-  height: 20%;
-  border-bottom: 1px solid #e7eae0;
-  justify-content: center;
-  align-items: center;
-  background-color: #e7eae0;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.container-quiz .box {
+.box {
   display: flex;
   width: 100%;
   height: 70%;
@@ -340,7 +316,7 @@ li {
   list-style: none;
   line-height: 3;
   border: 1.5px solid #cdd2d2;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.45rem;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
@@ -401,14 +377,6 @@ li.incorrect {
 i {
   display: none;
   color: white;
-}
-
-.step-progress {
-  display: flex;
-  width: 100%;
-  height: 5px;
-  background-color: rgb(106, 128, 202);
-  transition: 0.5s;
 }
 
 .btn-restart {
