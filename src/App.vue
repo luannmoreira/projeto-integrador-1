@@ -9,6 +9,7 @@
         <router-view name="footer"></router-view>
     </div>
 </template>
+
 <script>
 import { FadeTransition } from "vue2-transitions";
 

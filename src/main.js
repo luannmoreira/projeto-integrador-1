@@ -9,6 +9,7 @@ var SocialSharing = require('vue-social-sharing');
 Vue.config.productionTip = false;
 
 Vue.use(Argon);
+
 Vue.use(SocialSharing);
 
 new Vue({
